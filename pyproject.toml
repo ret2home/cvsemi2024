@@ -1,0 +1,29 @@
+[project]
+name = "cvsemi2024"
+version = "0.1.0"
+description = "初年次ゼミナール理科コンピュータビジョン"
+authors = [
+    { name = "ret2home", email = "defineprogram@gmail.com" }
+]
+dependencies = [
+    "requests>=2.32.2",
+    "opencv-python>=4.10.0.84",
+    "matplotlib>=3.9.0",
+    "numpy>=2.0.0"
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cvsemi2024"]
