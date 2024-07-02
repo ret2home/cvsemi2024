@@ -27,7 +27,7 @@ def index():
     font_path = "../NotoSansJP-Medium.ttf"
 
     dragon(input_image_path,output_image_path,font_path,output_pref,output_score)
-    open(output_image_path).write(output_pref)
+    open(output_image_path,"w").write("heyhey")
     return jsonify({"id":id})
 
 
