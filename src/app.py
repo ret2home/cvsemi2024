@@ -15,8 +15,7 @@ def index():
     
     file = request.files['file']
     id=str(uuid.uuid4())
-    input_path=f"../static/input_{id}.png"
-    pathlib.Path(input_path).touch()
+    input_path=f"./static/input_{id}.png"
     file.save(input_path)
     
     #res = similar_ranking(f"../static/input_{id}.png", wv_pres)
