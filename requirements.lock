@@ -8,20 +8,33 @@
 #   with-sources: false
 
 -e file:.
+blinker==1.8.2
+    # via flask
 certifi==2024.6.2
     # via requests
 charset-normalizer==3.3.2
     # via requests
+click==8.1.7
+    # via flask
 contourpy==1.2.1
     # via matplotlib
 cycler==0.12.1
     # via matplotlib
+flask==3.0.3
+    # via cvsemi2024
 fonttools==4.53.0
     # via matplotlib
 idna==3.7
     # via requests
+itsdangerous==2.2.0
+    # via flask
+jinja2==3.1.4
+    # via flask
 kiwisolver==1.4.5
     # via matplotlib
+markupsafe==2.1.5
+    # via jinja2
+    # via werkzeug
 matplotlib==3.9.0
     # via cvsemi2024
 numpy==2.0.0
@@ -48,3 +61,5 @@ six==1.16.0
     # via python-dateutil
 urllib3==2.2.2
     # via requests
+werkzeug==3.0.3
+    # via flask
