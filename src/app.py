@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import json
 import uuid
-#from lib import similar_ranking, dragon
+from lib import similar_ranking, dragon
 
 app = Flask(__name__)
 
