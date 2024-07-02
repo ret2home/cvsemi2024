@@ -9,7 +9,9 @@ dependencies = [
     "requests>=2.32.2",
     "opencv-python>=4.10.0.84",
     "matplotlib>=3.9.0",
-    "numpy>=2.0.0"
+    "numpy>=2.0.0",
+    "pillow>=10.4.0",
+    "python-dotenv>=1.0.1"
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

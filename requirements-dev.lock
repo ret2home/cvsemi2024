@@ -33,12 +33,15 @@ opencv-python==4.10.0.84
     # via cvsemi2024
 packaging==24.1
     # via matplotlib
-pillow==10.3.0
+pillow==10.4.0
+    # via cvsemi2024
     # via matplotlib
 pyparsing==3.1.2
     # via matplotlib
 python-dateutil==2.9.0.post0
     # via matplotlib
+python-dotenv==1.0.1
+    # via cvsemi2024
 requests==2.32.3
     # via cvsemi2024
 ruff==0.5.0

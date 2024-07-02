@@ -1,6 +1,8 @@
-# cvsemi2024
+# 描いた都道府県発表ドラゴン
 
 [都道府県の形状データ](https://tsukatte.com/category/building-map/map/)をもとに、入力画像の都道府県判定、及び点数計算を行う。
+
+![出力サンプル](./output_sample.png)
 
 ## 実行方法
 

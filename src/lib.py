@@ -77,8 +77,8 @@ def show_images(img, contour, wv):
         y = math.sin(i / 180 * math.pi) * wv[i]
         xx.append(x)
         yy.append(-y)
-    ax.scatter(xx, yy,s=1)
-    ax.scatter([0],[0],s=3)
+    ax.scatter(xx, yy, s=1)
+    ax.scatter([0], [0], s=3)
     ax.set_aspect("equal")
 
     plt.tight_layout()
@@ -123,7 +123,7 @@ def wave_data(file_path, show=False):
                 dis = math.sqrt(res[0] ** 2 + res[1] ** 2)
                 dist_round[theta] = max(dist_round[theta], dis)
 
-    mean_dist_round=sum(dist_round)/360
+    mean_dist_round = sum(dist_round) / 360
     wv = [d / mean_dist_round for d in dist_round]
 
     if show:
@@ -145,10 +145,10 @@ def cos_similarity(A, B):
     dot = 0
     for i in range(len(A)):
         dot += A[i] * B[i]
-    
+
     # eps
-    arg=dot/norm_A/norm_B
-    if arg>1:
-        arg=1
+    arg = dot / norm_A / norm_B
+    if arg > 1:
+        arg = 1
 
     return math.degrees(math.acos(arg))

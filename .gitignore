@@ -8,6 +8,7 @@ wheels/
 
 # venv
 .venv
+.env
 
 # prefectures data
 prefectures/
