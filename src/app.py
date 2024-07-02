@@ -26,8 +26,8 @@ def index():
     output_image_path = f"./static/output_{id}.png"
     font_path = "../NotoSansJP-Medium.ttf"
 
-    dragon(input_image_path,output_image_path,font_path,output_pref,output_score)
     open(output_image_path,"w").write("heyhey")
+    dragon(input_image_path,output_image_path,font_path,output_pref,output_score)
     return jsonify({"id":id})
 
 
