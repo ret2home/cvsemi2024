@@ -28,5 +28,9 @@ def index():
     return jsonify({"id":id})
 
 
+@app.route('/health-check',methods=['GET'])
+def health_check():
+    return jsonify({"message":"Hello World!"})
+
 if __name__ == '__main__':
     app.run()
