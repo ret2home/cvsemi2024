@@ -14,7 +14,7 @@ def index():
         prefectures = json.load(f)
     
     file = request.files['file']
-    id="fixed_id"
+    id=str(uuid.uuid4())
     input_path=f"./static/input_{id}.png"
     file.save(input_path)
     
