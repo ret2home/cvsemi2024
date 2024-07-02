@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import json
 import uuid
 from lib import similar_ranking, dragon
+import pathlib
 
 app = Flask(__name__)
 
@@ -14,7 +15,9 @@ def index():
     
     file = request.files['file']
     id=str(uuid.uuid4())
-    file.save(f"../static/input_{id}.png")
+    input_path=f"../static/input_{id}.png"
+    pathlib.Path(input_path).touch()
+    file.save(input_path)
     
     #res = similar_ranking(f"../static/input_{id}.png", wv_pres)
     #output_pref = prefectures[res[0][1]]
