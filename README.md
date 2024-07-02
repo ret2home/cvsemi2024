@@ -4,6 +4,8 @@
 
 ![出力サンプル](./output_sample.png)
 
+Web上で遊べる→ https://cvsemi2024.web.app
+
 ## 実行方法
 
 ライブラリのダウンロード他
