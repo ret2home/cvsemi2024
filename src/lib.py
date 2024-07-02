@@ -77,7 +77,8 @@ def show_images(img, contour, wv):
         y = math.sin(i / 180 * math.pi) * wv[i]
         xx.append(x)
         yy.append(-y)
-    ax.plot(xx, yy)
+    ax.scatter(xx, yy,s=1)
+    ax.scatter([0],[0],s=3)
     ax.set_aspect("equal")
 
     plt.tight_layout()
@@ -108,14 +109,11 @@ def wave_data(file_path, show=False):
     cx = M["m10"] / M["m00"]
     cy = M["m01"] / M["m00"]
 
-    dists_sum = 0
     dist_round = [0] * 360
 
     for i in range(len(contour)):
         x1 = contour[i][0][0] - cx
         y1 = contour[i][0][1] - cy
-        d = math.sqrt(x1**2 + y1**2)
-        dists_sum += d
         x2 = contour[(i + 1) % len(contour)][0][0] - cx
         y2 = contour[(i + 1) % len(contour)][0][1] - cy
 
@@ -124,8 +122,9 @@ def wave_data(file_path, show=False):
             if res is not None:
                 dis = math.sqrt(res[0] ** 2 + res[1] ** 2)
                 dist_round[theta] = max(dist_round[theta], dis)
-    dis_mean = dists_sum / len(contour)
-    wv = [d / dis_mean for d in dist_round]
+
+    mean_dist_round=sum(dist_round)/360
+    wv = [d / mean_dist_round for d in dist_round]
 
     if show:
         show_images(image, contour, wv)
@@ -146,6 +145,10 @@ def cos_similarity(A, B):
     dot = 0
     for i in range(len(A)):
         dot += A[i] * B[i]
+    
+    # eps
+    arg=dot/norm_A/norm_B
+    if arg>1:
+        arg=1
 
-    theta = math.degrees(math.acos(dot / norm_A / norm_B))
-    return theta
+    return math.degrees(math.acos(arg))
