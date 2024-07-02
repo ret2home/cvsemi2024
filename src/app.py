@@ -16,15 +16,15 @@ def index():
     id=str(uuid.uuid4())
     file.save(f"../static/input_{id}.png")
     
-    res = similar_ranking(f"../static/input_{id}.png", wv_pres)
-    output_pref = prefectures[res[0][1]]
-    output_score = int(100 - res[0][0] / 90 * 100)
+    #res = similar_ranking(f"../static/input_{id}.png", wv_pres)
+    #output_pref = prefectures[res[0][1]]
+    #output_score = int(100 - res[0][0] / 90 * 100)
 
-    input_image_path = "../dragon.png"
-    output_image_path = f"../static/output_{id}.png"
-    font_path = "../NotoSansJP-Medium.ttf"
+    #input_image_path = "../dragon.png"
+    #output_image_path = f"../static/output_{id}.png"
+    #font_path = "../NotoSansJP-Medium.ttf"
 
-    dragon(input_image_path,output_image_path,font_path,output_pref,output_score)
+    #dragon(input_image_path,output_image_path,font_path,output_pref,output_score)
     return jsonify({"id":id})
 
 
